@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import pruebaController from '../controllers/pruebaController';
+import pruebaController from '../../../controllers/pruebaController';
 
 class PruebaRoutes {
     public router:Router=Router();
