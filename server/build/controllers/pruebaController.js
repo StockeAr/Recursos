@@ -14,18 +14,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class PruebaController {
-    /*public async list (req:Request,res:Response){
-        (await pool).query('Describe rol');
-        res.json({text:'listando pruebas'});
-    }*/
+    /*public async getOne (req:Request,res:Response):Promise<any>{
+        const {id} = req.params;
+        await pool.query('SELECT * FROM games where id=?',[id], function(err, result, fields) {
+             if (err) throw err;
+             if(result.length > 0){
+             return res.json(result[0]);
+         }
+         res.status(404).json({text: "the game doesn´t exists"});
+         });
+          }*/
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const prueba = (yield database_1.default).query('SELECT * FROM prueba');
-            res.json(prueba);
+            const prueba = [(yield database_1.default).query('SELECT * FROM prueba')];
+            return res.json(prueba);
         });
     }
     getOne(req, res) {
-        const { id } = req.params;
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const prueba = [(yield database_1.default).query('SELECT *FROM prueba where id = ?', [id])];
+            if (prueba.length > 0) {
+                return res.json(prueba[0]);
+            }
+            res.status(404).json({ text: 'no se encontro la prueba' });
+            console.log(prueba[0]);
+        });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
