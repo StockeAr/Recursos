@@ -8,7 +8,11 @@ class PruebaRoutes {
     }
 
     config():void{
-        this.router.get('/', pruebaController.index);
+        this.router.get('/', pruebaController.list);
+        this.router.get('/:id', pruebaController.getOne);
+        this.router.post('/',pruebaController.create);
+        this.router.delete('/:id',pruebaController.delete);
+        this.router.put('/:id',pruebaController.update);
     }
 }
 const pruebaRoutes = new PruebaRoutes();

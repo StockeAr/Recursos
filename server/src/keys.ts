@@ -4,6 +4,6 @@ export default{
         host: 'localhost',
         user: 'root',
         password: '18dmd1999',
-        database: 'nodejs'
+        database: 'db'
     }
 }

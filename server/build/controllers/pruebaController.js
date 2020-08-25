@@ -14,11 +14,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class PruebaController {
-    index(req, res) {
+    /*public async list (req:Request,res:Response){
+        (await pool).query('Describe rol');
+        res.json({text:'listando pruebas'});
+    }*/
+    list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            (yield database_1.default).query('Describe rol');
-            res.json('prueba');
+            const prueba = (yield database_1.default).query('SELECT * FROM prueba');
+            res.json(prueba);
         });
+    }
+    getOne(req, res) {
+        const { id } = req.params;
+    }
+    create(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            (yield database_1.default).query('INSERT INTO prueba set ?', [req.body]);
+            res.json({ message: 'se ha creado la prueba ' });
+        });
+    }
+    delete(req, res) {
+        res.json({ text: 'eliminando una prueba ' + req.params.id });
+    }
+    update(req, res) {
+        res.json({ text: 'actualizando prueba ' + req.params.id });
     }
 }
 const pruebaController = new PruebaController();
