@@ -6,13 +6,13 @@ class PruebaController{
     /*public async getOne (req:Request,res:Response):Promise<any>{
         const {id} = req.params;
         await pool.query('SELECT * FROM games where id=?',[id], function(err, result, fields) {
-             if (err) throw err;
-             if(result.length > 0){
-             return res.json(result[0]);
+            if (err) throw err;
+            if(result.length > 0){
+            return res.json(result[0]);
          }
          res.status(404).json({text: "the game doesn´t exists"});
-         });
-          }*/
+        });
+    }*/
     public async list(req:Request,res:Response):Promise<any>{
         const prueba = [(await pool).query('SELECT * FROM prueba')];
         return res.json(prueba);
