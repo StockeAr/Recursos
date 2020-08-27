@@ -44,7 +44,8 @@ class PruebaController {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             (yield database_1.default).query('INSERT INTO prueba set ?', [req.body]);
-            res.json({ message: 'se ha creado la prueba ' });
+            res.json({ message: 'se ha creado con exito ' });
+            //(await pool).end();
         });
     }
     delete(req, res) {

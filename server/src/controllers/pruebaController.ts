@@ -16,6 +16,7 @@ class PruebaController{
     public async list(req:Request,res:Response):Promise<any>{
         const prueba = [(await pool).query('SELECT * FROM prueba')];
         return res.json(prueba);
+        
     }
 
     public async getOne(req:Request,res:Response):Promise<any>{
@@ -30,7 +31,8 @@ class PruebaController{
 
     public async create(req:Request, res:Response):Promise<void>{
         (await pool).query('INSERT INTO prueba set ?',[req.body]);
-        res.json({message:'se ha creado la prueba '});
+        res.json({message:'se ha creado con exito '});
+        //(await pool).end();
     }  
     public delete(req:Request,res:Response){
         res.json({text:'eliminando una prueba '+req.params.id});
