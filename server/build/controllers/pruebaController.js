@@ -13,21 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+//import {connect} from '../database';
 class PruebaController {
-    /*public async getOne (req:Request,res:Response):Promise<any>{
-        const {id} = req.params;
-        await pool.query('SELECT * FROM games where id=?',[id], function(err, result, fields) {
-            if (err) throw err;
-            if(result.length > 0){
-            return res.json(result[0]);
-         }
-         res.status(404).json({text: "the game doesn´t exists"});
-        });
-    }*/
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const prueba = [(yield database_1.default).query('SELECT * FROM prueba')];
-            return res.json(prueba);
+            return res.send(prueba);
         });
     }
     getOne(req, res) {
@@ -45,7 +36,6 @@ class PruebaController {
         return __awaiter(this, void 0, void 0, function* () {
             (yield database_1.default).query('INSERT INTO prueba set ?', [req.body]);
             res.json({ message: 'se ha creado con exito ' });
-            //(await pool).end();
         });
     }
     delete(req, res) {
