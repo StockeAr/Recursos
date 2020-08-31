@@ -2,7 +2,7 @@ create database db;
 
 use db;
 
-CREATE TABLE IF NOT EXISTS empleados (
+CREATE TABLE IF NOT EXISTS prueba (
     id int(11) NOT NULL AUTO_INCREMENT,
     descripcion varchar(45),
     ts timestamp DEFAULT CURRENT_TIMESTAMP,
