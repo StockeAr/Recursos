@@ -1,4 +1,4 @@
-import express, {Application} from 'express';
+import express,{Application} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
