@@ -1,1 +1,7 @@
-hola 
+despues de crear el proyecto angular se ejecutan las siguientes lineas:
+ ng g c shared/components/header
+ ng g c shared/components/formSearch
+ ng g m components/pages/home -m=app --route home
+ ng g m components/pages/characters
+ ng g m components/pages/characters/character-list -m=app 
+ ng g m components/pages/characters/character-details -m=app --route character-details
