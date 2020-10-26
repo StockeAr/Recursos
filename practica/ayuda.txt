@@ -1,0 +1,12 @@
+npm i typeorm -g
+typeorm init --name login_roles --database mysql --express
+npm i cors jsonwebtoken bycryptjs class-validator
+npm i -D ts-node-dev typescript @types/bcryptjs @types/cors @types/jsonwebtoken @types/express @types/node
+npm i helmet
+eliminamos la carpeta node_modules y luego ejecutamos npm install
+se elimina del archivo package.json en el apartado de scripts lo siguiente :  "start": "ts-node src/index.ts",
+se agrega la siguiente linea acontinuacion de lo anterior: 
+    "tsc":"tsc",
+      "dev":"set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts"
+borrar el archivo routes.ts que crea por defecto
+para correr el servidor hay que ejecutar: npm run dev
