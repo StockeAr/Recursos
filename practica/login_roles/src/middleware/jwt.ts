@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 import config from '../config/config';
 
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
-    //auth es el nombre que le asigno para pasa por parametro en esta variable el token de config.ts
+    //auth es el nombre que le asigno para pasa por parametro en esta variable el token de config.ts para validar en el postman
     const token = <string>req.headers['auth'];
     let jwtPayload;
     try {

@@ -39,7 +39,8 @@ export class UserController {
         user.password = password;
         user.rol = rol;
         //validaciones
-        const errors = await validate(user);
+        const opcionesValidacion = { validationError: { target: false, value: false } };
+        const errors = await validate(user,opcionesValidacion);
         if (errors.length > 0) {
             return res.status(404).json(errors);
         }
@@ -69,7 +70,8 @@ export class UserController {
         catch (e) {
             return res.status(404).json({ message: 'Usuario no encontrado' });
         }
-        const errors = await validate(user);
+        const opcionesValidacion = { validationError: { target: false, value: false } };
+        const errors = await validate(user,opcionesValidacion);
         if (errors.length > 0) {
             return res.status(400).json(errors);
         }
