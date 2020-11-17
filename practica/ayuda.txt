@@ -10,3 +10,6 @@ se agrega la siguiente linea acontinuacion de lo anterior:
       "dev":"set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts"
 borrar el archivo routes.ts que crea por defecto
 para correr el servidor hay que ejecutar: npm run dev
+
+Anotaciones:
+los codigo de estado: 2XX(son de respuesta exitosa), los 3XX (son redirecciones), los 4XX(solicitud invalida) y los 5XX (errores en el servidor).
