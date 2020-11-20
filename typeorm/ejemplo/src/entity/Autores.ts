@@ -16,7 +16,4 @@ export class Autores{
 
     @Column()
     Nacionalidad:number;
-
-    @ManyToOne(type =>Paises,paises=>paises.autores)
-    paises:Paises;
 }

@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {} from '.'
+import autor from './autor'
 const routes=Router();
-routes.use('/autor',)
+routes.use('/autor',autor)
 export default routes;

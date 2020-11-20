@@ -8,6 +8,4 @@ export class Paises{
     @Column()
     nombre:string;
 
-    @OneToMany(type =>Autores, autores=>autores.paises)
-    autores:Autores[];
 }
